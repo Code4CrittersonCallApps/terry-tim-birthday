@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
-<meta name="theme-color" content="#1a2420" />
+<meta name="theme-color" content="#2a3a40" />
 <meta name="description" content="Happy Birthday, Terry Timm — Love, AM, M & V." />
 <meta property="og:title" content="Happy Birthday, Terry Timm!" />
 <title>Happy Birthday, Terry Timm!</title>
@@ -13,17 +13,10 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
 <style>
 :root {
-  --rose: #d4788a;
-  --peach: #e8b89a;
-  --ink: #2a221c;
-  --muted: #5c4e44;
-  --card: rgba(255, 248, 241, 0.92);
-  --gold: #c9a06a;
-  --sage: #8fad96;
-  --basil: #3d6b4f;
-  --pesto: #6b9e4a;
-  --radius: 1.35rem;
-  --max: 26rem;
+  --ink: #1c2428;
+  --muted: #3a454c;
+  --basil: #2f5d3a;
+  --cream: #fffaf4;
   --safe-b: env(safe-area-inset-bottom, 0px);
   --safe-t: env(safe-area-inset-top, 0px);
   --font: "DM Sans", "Segoe UI", system-ui, sans-serif;
@@ -34,174 +27,124 @@ html { -webkit-text-size-adjust: 100%; }
 html, body {
   margin: 0;
   min-height: 100dvh;
-  color: var(--ink);
   font-family: var(--font);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
-  background: #1a2420;
+  background: #1e2a30;
 }
 .bg {
   position: fixed;
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  pointer-events: none;
 }
 .bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 55% 40%;
+  object-position: 52% 35%;
   display: block;
-  /* keep crisp on hi-DPI */
-  image-rendering: auto;
-  transform: translateZ(0);
 }
 .bg-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(20, 28, 24, 0.35) 0%, rgba(30, 24, 18, 0.28) 40%, rgba(40, 30, 22, 0.45) 100%),
-    radial-gradient(120% 80% at 50% 30%, rgba(255, 248, 241, 0.08), transparent 60%);
+  /* light wash only — photo stays clear */
+  background: linear-gradient(180deg, rgba(10,16,20,0.18) 0%, rgba(10,16,20,0.08) 45%, rgba(10,16,20,0.28) 100%);
 }
 .app {
   position: relative;
   z-index: 1;
   min-height: 100dvh;
-  max-width: var(--max);
+  max-width: 26rem;
   margin: 0 auto;
-  padding: calc(1.35rem + var(--safe-t)) 1.15rem calc(1.35rem + var(--safe-b));
+  padding: calc(1.25rem + var(--safe-t)) 1rem calc(1.1rem + var(--safe-b));
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  gap: 0.7rem;
+  justify-content: flex-end;
+  gap: 0.65rem;
 }
-.card {
-  position: relative;
-  background: var(--card);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+.panel {
+  background: rgba(255, 250, 244, 0.78);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
   border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: var(--radius);
-  padding: 1.55rem 1.25rem 1.35rem;
-  box-shadow:
-    0 18px 44px rgba(20, 20, 16, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.75);
-  overflow: hidden;
+  border-radius: 1.25rem;
+  padding: 1.35rem 1.2rem 1.15rem;
   text-align: center;
-}
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 5px;
-  background: linear-gradient(90deg, var(--sage), var(--peach), var(--rose), var(--gold));
-}
-.critters {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  font-size: 1.65rem;
-  margin-bottom: 0.6rem;
-  line-height: 1;
-  filter: drop-shadow(0 3px 6px rgba(90, 60, 40, 0.12));
-}
-.critters span {
-  display: inline-block;
-  animation: bob 3.2s ease-in-out infinite;
-}
-.critters span:nth-child(2) { animation-delay: 0.3s; }
-.critters span:nth-child(3) { animation-delay: 0.6s; }
-.critters span:nth-child(4) { animation-delay: 0.9s; }
-@keyframes bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-.eyebrow {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--rose);
-  margin: 0 0 0.45rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
 }
 h1 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(1.9rem, 7.8vw, 2.4rem);
+  font-size: clamp(1.85rem, 7.2vw, 2.25rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.75rem;
   color: var(--ink);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
 }
 h1 .name {
   display: block;
-  background: linear-gradient(120deg, #c45c6a, #d4788a 45%, #c9a06a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-top: 0.12rem;
+  color: #2f5d3a;
+  margin-top: 0.1rem;
 }
 .msg {
-  font-size: 1.08rem;
-  line-height: 1.55;
+  font-size: 1.05rem;
+  line-height: 1.5;
   color: var(--muted);
-  margin: 0 auto 1.1rem;
+  margin: 0 auto 0.95rem;
   max-width: 28ch;
 }
 .from {
-  font-size: 1.05rem;
-  color: var(--ink);
-  font-weight: 600;
-  margin: 0 0 1.05rem;
   font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 1rem;
 }
 .cat-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.45rem;
-  margin-top: 0.15rem;
+  gap: 0.4rem;
 }
 .cat-btn {
-  width: 5.6rem;
-  height: 5.6rem;
+  width: 5.4rem;
+  height: 5.4rem;
   border-radius: 999px;
-  border: 2px solid rgba(58, 46, 40, 0.18);
+  border: 2px solid rgba(28, 36, 40, 0.15);
   background: radial-gradient(circle at 40% 30%, #fff, #f0ebe6 60%, #e4ddd4);
-  box-shadow: 0 8px 20px rgba(90, 60, 40, 0.16);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
   cursor: pointer;
   display: grid;
   place-items: center;
   padding: 0;
   transition: transform 0.12s ease;
-  position: relative;
 }
 .cat-btn:active { transform: scale(0.94); }
 .cat-btn:focus-visible { outline: 3px solid var(--basil); outline-offset: 3px; }
-.cat-btn svg { width: 3.6rem; height: 3.6rem; display: block; }
+.cat-btn svg { width: 3.5rem; height: 3.5rem; display: block; }
 .cat-hint {
   font-size: 0.78rem;
   color: var(--basil);
   font-weight: 600;
   margin: 0;
-  text-align: center;
-  max-width: 16rem;
   line-height: 1.3;
+  max-width: 16rem;
 }
 .credit {
   text-align: center;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   line-height: 1.35;
-  color: rgba(255, 248, 241, 0.88);
+  color: rgba(255, 255, 255, 0.92);
   margin: 0;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.55);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.65);
 }
 .credit a {
-  color: rgba(255, 248, 241, 0.95);
+  color: #fff;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -212,35 +155,22 @@ h1 .name {
   overflow: hidden;
   z-index: 50;
 }
-.leaf {
+.leaf, .speck {
   position: absolute;
   top: 0;
   left: 0;
+  will-change: transform, opacity;
+  animation: shoot linear forwards;
+}
+.leaf {
   font-size: 1.15rem;
   line-height: 1;
-  will-change: transform, opacity;
-  animation: shoot linear forwards;
   filter: drop-shadow(0 1px 1px rgba(40, 70, 40, 0.25));
 }
-.speck {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  will-change: transform, opacity;
-  animation: shoot linear forwards;
-}
+.speck { width: 6px; height: 6px; border-radius: 50%; }
 @keyframes shoot {
-  0% {
-    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.6);
-    opacity: 1;
-  }
-  100% {
-    transform: translate3d(var(--dx), var(--dy), 0) rotate(var(--rot)) scale(1);
-    opacity: 0;
-  }
+  0% { transform: translate3d(0,0,0) rotate(0deg) scale(0.6); opacity: 1; }
+  100% { transform: translate3d(var(--dx), var(--dy), 0) rotate(var(--rot)) scale(1); opacity: 0; }
 }
 </style>
 </head>
@@ -259,11 +189,7 @@ h1 .name {
   <div class="bg-overlay"></div>
 </div>
 <div class="app">
-  <article class="card" id="card" aria-label="Birthday card for Terry Timm">
-    <div class="critters" aria-hidden="true">
-      <span>🐐</span><span>🦆</span><span>🐰</span><span>🐕</span>
-    </div>
-    <p class="eyebrow">With all our hearts</p>
+  <article class="panel" aria-label="Birthday card for Terry Timm">
     <h1>Happy Birthday,<span class="name">Terry Timm!</span></h1>
     <p class="msg">Hope you have the best day, Terry! We truly appreciate everything you do for us and for so many others.</p>
     <p class="from">Love, AM, M &amp; V</p>
@@ -293,9 +219,9 @@ h1 .name {
     </div>
   </article>
   <p class="credit">
-    Background: Hudson River Palisades from Alpine Boat Basin —
-    photo by <a href="https://commons.wikimedia.org/wiki/User:Beyond_My_Ken" rel="noopener">Beyond My Ken</a>
-    / <a href="https://commons.wikimedia.org/wiki/File:Hudson_River_Palisades_from_Alpine_Boat_Basin_in_fall_2.jpg" rel="noopener">Wikimedia Commons</a>
+    Photo: <a href="https://commons.wikimedia.org/wiki/User:Beyond_My_Ken" rel="noopener">Beyond My Ken</a>
+    — Hudson River Palisades from Alpine Boat Basin /
+    <a href="https://commons.wikimedia.org/wiki/File:Hudson_River_Palisades_from_Alpine_Boat_Basin_in_fall_2.jpg" rel="noopener">Wikimedia Commons</a>
     (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>)
   </p>
 </div>
@@ -305,16 +231,13 @@ h1 .name {
   const layer = document.getElementById('confetti');
   const cat = document.getElementById('cat');
   const pesto = ['#4a7c59', '#6b9e4a', '#3d6b4f', '#8fbc6b', '#2f5d3a'];
-
   function origin() {
     const r = cat.getBoundingClientRect();
     return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
   }
-
   function shoot() {
     const o = origin();
-    const n = 36;
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < 36; i++) {
       const isLeaf = Math.random() > 0.35;
       const el = document.createElement(isLeaf ? 'span' : 'i');
       el.className = isLeaf ? 'leaf' : 'speck';
@@ -342,11 +265,7 @@ h1 .name {
       setTimeout(() => el.remove(), dur * 1000 + 60);
     }
   }
-
-  cat.addEventListener('click', (e) => {
-    e.stopPropagation();
-    shoot();
-  });
+  cat.addEventListener('click', (e) => { e.stopPropagation(); shoot(); });
 })();
 </script>
 </body>
